@@ -1,6 +1,7 @@
 
 const baseURL = "https://my-json-server.typicode.com/Gakeniii/Phase1-Final-project/gifts";
 
+// const baseURL = "http://localhost:3000/gifts"
 document.addEventListener("DOMContentLoaded", function () {
   fetch(baseURL)
     .then((resp) => {
@@ -15,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((err) => {
       alert("An error occurred: " + err);
     });
-    //Initialize Form submission
     submitData();
 });
 
@@ -43,10 +43,10 @@ function renderGift(giftObject) {
     const pictureGift = document.querySelector("#mainGift");
     const linkGift = document.querySelector("#linkGift");
     const commentGift = document.querySelector("#commentGift");
-    const addWishBtn = document.getElementById('addWishbtn')
-
-    //Removing the "ADD Wish" button that leads to the form
-    // addWishBtn.remove()
+    
+    //Removing the  link scrolling to the from
+    //didn't work
+    // document.getElementById('wish').remove()
 
     // Clear previous delete button
     delGift.innerHTML = "";
@@ -54,13 +54,12 @@ function renderGift(giftObject) {
     // Create delete button
     let deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "Delete";
-    deleteBtn.addEventListener("click", () => {
+    deleteBtn.addEventListener("click", (e) => {
       deleteGift(id); // Call the delete function
       nameItem.remove(); // Removes the gift from the list
-      window.onreset();
+      e.target.reset() 
     });
     delGift.appendChild(deleteBtn);
-
 
     // Update UI with gift details
     itemGift.innerText = item;
@@ -115,7 +114,6 @@ function submitData() {
   });
 }
 
-//Delete function
 function deleteGift(id) {
   fetch(`${baseURL}/${id}`, {
     method: "DELETE",

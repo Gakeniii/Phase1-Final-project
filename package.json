@@ -1,6 +1,24 @@
+
 {
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gakeniii/Phase1-Final-project"
+  },
+  "author": "Sifa Gakeni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gakeniii/Phase1-Final-project/gifts"
+  },
+  "homepage": "https://github.com/Gakeniii/Phase1-Final-project#readme",
   "dependencies": {
-    "gitignore": "^0.7.0",
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "^0.17.1"
   }
 }

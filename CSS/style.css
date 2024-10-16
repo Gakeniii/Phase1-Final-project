@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+    width:fit-content;
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Poppins", sans-serif;
-    background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
-    background:  url(/images/partyreal.jpg) ;
+    background: linear-gradient(rgba(101, 98, 98, 0.712), rgb(101, 98, 98, 0.712)),url(/images/partyreal.jpg);
+    background-size: cover;
 }
 
 h2 {
@@ -20,7 +24,7 @@ h2 {
 #donation-bar {
     position: relative;
     padding-bottom: 5px;
-    left: 600px;
+    left: 550px;
     bottom: 815px;
 }
 
@@ -35,21 +39,21 @@ header {
     /* background-color: #ffffffb0; */
     padding: 5px;
     border-radius: 3px;
-    color: rgb(74, 13, 98);
+    color: rgb(88, 7, 121);
     left: 450px;
     /* box-shadow: 0px 0px 0px rgb(222, 132, 22); */
 }
 
 #mainGift {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     object-fit: fill;
     top: 200px;
-    left: 65px;
+    left: 40px;
     border-width: 10px;
     border-radius: 3px;
-    box-shadow: 0px 0 5px rgb(148, 148, 148);
+    box-shadow: 0px 0 5px 5px rgb(148, 148, 148);
 }
 
 #giftsFor {
@@ -57,12 +61,12 @@ header {
     position: relative;
     font-size: 25px;
     padding-top: 70px;
-    left: 70px;
-    color: rgb(104, 20, 125);
+    left: 30px;
+    color: rgb(46, 3, 102);
     list-style-type: none;
     width: 150px;
     cursor: pointer;
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 #giftsFor li {
@@ -72,13 +76,15 @@ header {
 #giftsFor li:hover {
     background-color: rgb(167, 215, 7);
     color: #000;
-    width: 120px;
+    width: 100px;
     border-radius: 8px;
     transform: translate(2px, 1px);
     transition: 0.2s;
+    box-shadow: 0px 0 5px 2px rgba(55, 142, 8, 0.792);
 }
 
 h3 {
+    bottom: 100px;
     background-color: rgb(255, 146, 12);
     border-radius: 8px;
     font-weight: 400;
@@ -89,8 +95,8 @@ h3 {
 
 #giftDisplay {
     position: relative;
-    left: 480px;
-    bottom: 230px;
+    left: 350px;
+    bottom: 150px;
     font-size: 20px;
     font-family: "Poppins", san-serif;
     width: 500px;
@@ -98,8 +104,10 @@ h3 {
 
 /* Name of the gift being displayed */
 #nameGift {
+    left: 50px;
+
     font-weight: 500;
-    font-size: 55px;
+    font-size: 45px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-transform: uppercase;
@@ -109,63 +117,74 @@ h3 {
 /* Box wit all the pages content except the left box */
 #middleBox {
     position: absolute;
-    width: 900px;
-    border: 5px solid, white solid;
+    width: 800px;
+    /* border: 5px solid, white solid; */
     margin: 0;
-    background-color: #ffffffb0;
-    height: 250vh;
-    left: 300px;
+    background-color: #f3f1f19c;
+    height: 200vh;
+    left: 250px;
     top: 70px;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px rgb(125, 125, 125);
+    box-shadow: 0px 0px 5px rgba(25, 24, 24, 0.74);
 }
 
 /*  where the names are being displayed */
 #leftBox {
     position: absolute;
-    width: 230px;
+    width: 180px;
     padding: 10px;
     border: 5px solid, white solid;
     margin: 0;
-    background-color: #f8f3f391;
+    background-color: #edeaeaae;
     height: 150vh;
     left: 20px;
     top: 70px;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px rgb(160, 160, 160);
-}
+    box-shadow: 0px 0px 5px rgba(25, 24, 24, 0.74);}
 
-/* Form to add more gifts */
+/* FORM */
 #iWantMoreGifts {
+    background: transparent;
+    background-size: cover;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
     position: relative;
-    box-shadow: 0px 0px 5px rgba(101, 101, 101, 0.74);
-    text-align: center;
+    box-shadow: 0px 0px 5px rgba(25, 24, 24, 0.74);
     border-radius: 5px;
-    background: rgba(223, 222, 223, 0.493);
-    height: 450px;
+    height: 500px;
     width: 600px;
-    left: 550px;
-    bottom: 100px;
+    left: 350px;
+    bottom: 400px;
     font-family: "Poppins", sans-serif;
+    justify-content: center;
 }
-
+#add{
+    margin-left: 13pc;
+    width: 20pc;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 500;
+}
 label{
-    font-size: 18px;
-    font-weight: 300;
-    width: 150px;
-    position: relative;
-    flex-direction: row;
     display: inline-flex;
+    width: 100pt;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
     margin: 0.2cm;
 }
 input[type="text"] {
-    font-size: 400;
-    width: 60%;
+    font-size: 18px;
+    width: 20pc;
     padding: 8px;
+    /* left: 100pc; */
     margin: 5px;
     height: 25px;
     border: none;
     border-radius: 5px;
+}
+input[type="text"] :hover{
+    border: 1px solid black;
 }
 
 /* #checkOrder {
@@ -179,8 +198,9 @@ input[type="text"] {
 #finalSubmit {
     font-weight: 400;
     font-size: 20px;
-    width: 50%;
+    width: 60%;
     height: 40px;
+    margin-left: 9pc;
     color: rgb(0, 0, 0);
     padding: 9px 25px;
     background-color: rgb(255, 146, 2);
@@ -219,16 +239,25 @@ a:hover {
 
 /* Delete button */
 #delete {
-    margin-top: 24px;
+    margin-top: 1pc;
 }
 
 #delete button {
     height: 40px;
     padding: 0 24px;
-    background-color: rebeccapurple;
-    color: white;
+    font-size: 18px;
+    background-color: rgb(189, 8, 51);
+    color: #000;
     outline: none;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+#delete :hover{
+    color: antiquewhite;
+    background-color: rgb(124, 9, 30);
+    box-shadow: 3px 5px 5px grey;
+    transform: translate(2px, 1px);
+    transition: 0.2s;
+
 }
