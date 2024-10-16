@@ -35,9 +35,8 @@ function renderGift(giftObject) {
     // Destructure giftObject
     const { id, name, item, price, picture, link, comment } = giftObject;
 
-    let delGift = document.createElement('button');
     // Select elements
-    delGift = document.getElementById("delete");
+    const delGift = document.getElementById("delete");
     const itemGift = document.querySelector("#itemGift");
     const nameGift = document.querySelector("#nameGift");
     const priceGift = document.querySelector("#priceGift");
@@ -47,7 +46,7 @@ function renderGift(giftObject) {
     const addWishBtn = document.getElementById('addWishbtn')
 
     //Removing the "ADD Wish" button that leads to the form
-    addWishBtn.remove()
+    // addWishBtn.remove()
 
     // Clear previous delete button
     delGift.innerHTML = "";
@@ -58,8 +57,10 @@ function renderGift(giftObject) {
     deleteBtn.addEventListener("click", () => {
       deleteGift(id); // Call the delete function
       nameItem.remove(); // Removes the gift from the list
+      window.onreset();
     });
     delGift.appendChild(deleteBtn);
+
 
     // Update UI with gift details
     itemGift.innerText = item;
@@ -114,49 +115,7 @@ function submitData() {
   });
 }
 
-
-//tried to make an edit function
-// function updateData() {
-//     //grab the form
-//     const addAnotherGift = document.getElementById("submitForm")
-//     // get the event listener too
-//     const editGift = document.createElement('Edit')
-//     addAnotherGift.addEventListener('submit', (event) => {
-//         event.preventDefault();
-
-//         const newName = event.target["nameInput"].value
-//         const newItem = event.target["itemInput"].value
-//         const newPrice = event.target["priceInput"].value
-//         const newPicture = event.target["pictureInput"].value
-//         const newLink = event.target["linkInput"].value
-//         const newComment = event.target["commentInput"].value
-
-//         const updateGift = {
-//             item: newItem,
-//             name: newName,
-//             price: newPrice,
-//             picture: newPicture,
-//             link: newLink,
-//             comment: newComment
-//         }
-
-//         renderGift(updateGift);
-
-//         fetch(baseURL, {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify(updateGift),
-//         })
-//             .then((res) => res.json())
-//             .then((giftObj) => console.log(giftObj))
-//             .catch(error => console.error(error))
-//         event.target.reset()
-//     })
-// }
-
+//Delete function
 function deleteGift(id) {
   fetch(`${baseURL}/${id}`, {
     method: "DELETE",
