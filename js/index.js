@@ -1,122 +1,125 @@
-submitData();
-const baseURL = "http://localhost:3000/gifts"
+
+const baseURL = "https://my-json-server.typicode.com/Gakeniii/Phase1-Final-project/gifts";
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch(baseURL)
-        .then(resp => resp.json())
-        .then(data => {
-            const gift = data
-            nameList(gift)
-        })
-})
-
+  fetch(baseURL)
+    .then((resp) => {
+      if (!resp.ok) {
+        throw new Error("Sorry. There was a problem retrieving gifts.");
+      }
+      return resp.json();
+    })
+    .then((data) => {
+      nameList(data);
+    })
+    .catch((err) => {
+      alert("An error occurred: " + err);
+    });
+    //Initialize Form submission
+    submitData();
+});
 
 function nameList(giftArray) {
-
-    giftArray.forEach(giftObject => {
-        let orderedNames = document.getElementById("giftGetters")
-        let nameItem = document.createElement('li')
-        nameItem.textContent = giftObject.name
-        orderedNames.append(nameItem)
-
-
-        //trying to create a purchase button for each item
-
-        nameItem.addEventListener('click', (e) => {
-            const { item, name, price, picture, link, comment } = giftObject
-
-            const itemGift = document.querySelector("#itemGift")
-            const nameGift = document.querySelector("#nameGift")
-            const priceGift = document.querySelector("#priceGift")
-            const pictureGift = document.querySelector("#mainGift")
-            const linkGift = document.querySelector("#linkGift")
-            const commentGift = document.querySelector("#commentGift")
-
-            itemGift.innerText = giftObject.item
-            nameGift.textContent = giftObject.name
-            priceGift.textContent = giftObject.price
-            pictureGift.src = giftObject.picture
-            linkGift.href = giftObject.link
-            commentGift.textContent = giftObject.comment
-
-        })
-
-    })
+  giftArray.forEach((giftObject) => {
+    renderGift(giftObject); // Reuse renderGift to handle list creation
+  });
 }
 
 function renderGift(giftObject) {
-    let nameItem = document.createElement('li')
-    nameItem.textContent = giftObject.name
-    let orderedNames = document.querySelector('#giftGetters')
-    orderedNames.append(nameItem)
+  let nameItem = document.createElement("li");
+  nameItem.textContent = giftObject.name;
+  let orderedNames = document.querySelector("#giftGetters");
+  orderedNames.append(nameItem);
 
-    nameItem.addEventListener('click', (e) => {
-        //Destructuring 
-        const { item, name, price, picture, link, comment } = giftObject
+  nameItem.addEventListener("click", () => {
+    // Destructure giftObject
+    const { id, name, item, price, picture, link, comment } = giftObject;
 
-        const itemGift = document.querySelector("#itemGift")
-        const nameGift = document.querySelector("#nameGift")
-        const priceGift = document.querySelector("#priceGift")
-        const pictureGift = document.querySelector("#mainGift")
-        const linkGift = document.querySelector("#linkGift")
-        const commentGift = document.querySelector("#commentGift")
+    let delGift = document.createElement('button');
+    // Select elements
+    delGift = document.getElementById("delete");
+    const itemGift = document.querySelector("#itemGift");
+    const nameGift = document.querySelector("#nameGift");
+    const priceGift = document.querySelector("#priceGift");
+    const pictureGift = document.querySelector("#mainGift");
+    const linkGift = document.querySelector("#linkGift");
+    const commentGift = document.querySelector("#commentGift");
+    const addWishBtn = document.getElementById('addWishbtn')
 
-        itemGift.innerText = giftObject.item
-        nameGift.textContent = giftObject.name
-        priceGift.textContent = giftObject.price
-        pictureGift.src = giftObject.picture
-        linkGift.href = giftObject.link
-        commentGift.textContent = giftObject.comment
+    //Removing the "ADD Wish" button that leads to the form
+    addWishBtn.remove()
 
-        name.innerHTML = `<button onclick="deleteGift(${giftObject.id})">Delete</button>`
-    })
+    // Clear previous delete button
+    delGift.innerHTML = "";
 
+    // Create delete button
+    let deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = "Delete";
+    deleteBtn.addEventListener("click", () => {
+      deleteGift(id); // Call the delete function
+      nameItem.remove(); // Removes the gift from the list
+    });
+    delGift.appendChild(deleteBtn);
+
+    // Update UI with gift details
+    itemGift.innerText = item;
+    nameGift.textContent = name;
+    priceGift.textContent = price;
+    pictureGift.src = picture;
+    linkGift.href = link;
+    commentGift.textContent = comment;
+  });
 }
 
 function submitData() {
-    //grab the form
-    const addAnotherGift = document.getElementById("submitForm")
-    // get the event listener too 
-    addAnotherGift.addEventListener('submit', (event) => {
-        event.preventDefault();
+  // Grab the form
+  const addAnotherGift = document.getElementById("submitForm");
 
-        const newName = event.target["nameInput"].value
-        const newItem = event.target["itemInput"].value
-        const newPrice = event.target["priceInput"].value
-        const newPicture = event.target["pictureInput"].value
-        const newLink = event.target["linkInput"].value
-        const newComment = event.target["commentInput"].value
+  // Add event listener
+  addAnotherGift.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-        const newGift = {
-            item: newItem,
-            name: newName,
-            price: newPrice,
-            picture: newPicture,
-            link: newLink,
-            comment: newComment
-        }
+    // Collect form input values
+    const newName = event.target["nameInput"].value;
+    const newItem = event.target["itemInput"].value;
+    const newPrice = event.target["priceInput"].value;
+    const newPicture = event.target["pictureInput"].value;
+    const newLink = event.target["linkInput"].value;
+    const newComment = event.target["commentInput"].value;
 
-        renderGift(newGift);
+    const newGift = {
+      item: newItem,
+      name: newName,
+      price: newPrice,
+      picture: newPicture,
+      link: newLink,
+      comment: newComment,
+    };
 
-        fetch(baseURL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newGift),
-        })
-            .then((res) => res.json())
-            .then((giftObj) => console.log(giftObj))
-            .catch(error => console.error(error))
-        event.target.reset()
+    renderGift(newGift); // Display the new gift
+
+    // POST request to server
+    fetch(baseURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newGift),
     })
+      .then((res) => res.json())
+      .then((giftObj) => console.log(giftObj))
+      .catch((error) => console.error(error));
 
+    event.target.reset(); // Clear form inputs
+  });
 }
 
+
+//tried to make an edit function
 // function updateData() {
 //     //grab the form
 //     const addAnotherGift = document.getElementById("submitForm")
-//     // get the event listener too 
+//     // get the event listener too
 //     const editGift = document.createElement('Edit')
 //     addAnotherGift.addEventListener('submit', (event) => {
 //         event.preventDefault();
@@ -154,18 +157,18 @@ function submitData() {
 //     })
 // }
 
-function deleteGift(id){
-    fetch(`${baseURL}/${id}`,{
-    method: 'DELETE',
-    header: {
-        "Content-type": "application/json",
-    }
-    .then(res => res.json())
+function deleteGift(id) {
+  fetch(`${baseURL}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
     .then(() => {
-        alert("Item deleted successfully !")
+      alert("Item deleted successfully!");
     })
-    .catch(error => console.log("Error cannor delete:",error))
-    })
+    .catch((error) => console.log("Error: Cannot delete:", error));
 }
 
-
+// Initialize form submission handling

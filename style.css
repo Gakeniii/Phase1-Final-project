@@ -2,15 +2,14 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background:url(./images/gifts.jpg);
+    background: url(./images/gifts.jpg);
     background-size: cover;
     height: 100vh;
-    width: 100%
-
+    width: 800px;
 }
 
 h2 {
-    text-shadow: 0px .60px 0px rgb(0, 0, 0);
+    text-shadow: 0px 0.6px 0px rgb(0, 0, 0);
     font-size: 38px;
     box-sizing: border-box;
     margin: 0;
@@ -25,9 +24,10 @@ h2 {
     bottom: 815px;
 }
 
-#whosList{
+#whosList {
     padding: 1px;
 }
+
 header {
     justify-content: space-between;
     justify-content: center;
@@ -75,7 +75,7 @@ header {
     width: 120px;
     border-radius: 8px;
     transform: translate(2px, 1px);
-    transition: 0.2s
+    transition: 0.2s;
 }
 
 h3 {
@@ -84,7 +84,7 @@ h3 {
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
-    color: #000
+    color: #000;
 }
 
 #giftDisplay {
@@ -96,14 +96,17 @@ h3 {
     width: 500px;
 }
 
+/* Name of the gift being displayed */
 #nameGift {
     font-weight: 500;
     font-size: 55px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-transform: uppercase;
     color: rgb(0, 0, 0);
 }
 
+/* Box wit all the pages content except the left box */
 #middleBox {
     position: absolute;
     width: 1000px;
@@ -117,6 +120,7 @@ h3 {
     box-shadow: 0px 0px 15px rgb(125, 125, 125);
 }
 
+/*  where the names are being displayed */
 #leftBox {
     position: absolute;
     width: 230px;
@@ -131,28 +135,52 @@ h3 {
     box-shadow: 0px 0px 15px rgb(160, 160, 160);
 }
 
+/* Form to add more gifts */
 #iWantMoreGifts {
     position: relative;
-    box-shadow: 0px 0px 5px rgb(182, 182, 182);
+    box-shadow: 0px 0px 5px rgba(101, 101, 101, 0.74);
     text-align: center;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.436);
-    height: 450px;
+    background: rgba(223, 222, 223, 0.493);
+    height: 700px;
     width: 600px;
     left: 550px;
-    bottom: 200px;
+    bottom: 100px;
     font-family: "Poppins", sans-serif;
 }
 
-#checkOrder {
+label{
+    font-size: 18px;
+    font-weight: 300;
+    width: 140px;
+    position: relative;
+    flex-direction: row;
+    display: inline-flex;
+    margin: 0.2cm;
+}
+input[type="text"] {
+    font-size: 400;
+    width: 60%;
+    padding: 8px;
+    margin: 5px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* #checkOrder {
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: rgba(255, 255, 255, 0.381);
-}
+} */
 
 #finalSubmit {
+    font-weight: 400;
+    font-size: 20px;
+    width: 50%;
+    height: 40px;
     color: rgb(0, 0, 0);
     padding: 9px 25px;
     background-color: rgb(255, 146, 2);
@@ -167,10 +195,11 @@ h3 {
     color: #000;
     transform: translate(2px, 1px);
     box-shadow: 3px 5px 5px grey;
-    transition: 0.2s
+    transition: 0.2s;
 }
 
-#linkGift {
+/* Anchor tags  */
+a {
     color: rgb(0, 0, 0);
     padding: 9px 25px;
     background-color: rgb(221, 39, 129);
@@ -180,10 +209,26 @@ h3 {
     text-decoration: none;
 }
 
-#linkGift:hover {
+a:hover {
     background: rgb(167, 215, 7);
     color: #000;
     box-shadow: 3px 5px 5px grey;
     transform: translate(2px, 1px);
-    transition: 0.2s
+    transition: 0.2s;
+}
+
+/* Delete button */
+#delete {
+    margin-top: 24px;
+}
+
+#delete button {
+    height: 40px;
+    padding: 0 24px;
+    background-color: rebeccapurple;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
