@@ -3,6 +3,14 @@
 *{
     width:fit-content;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightcoral;
+        width: 480px;
+    }
+}
+
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -14,7 +22,7 @@ h2 {
     text-shadow: 0px 0.6px 0px rgb(0, 0, 0, 0.3);
     font-size: 50px;
     box-sizing: border-box;
-    color: rgb(6, 109, 183);
+    color: #000;
     margin: 0;
     text-align: center;
     height: 40px;
@@ -119,7 +127,7 @@ h3 {
     /* border: 5px solid, white solid; */
     margin: 0;
     background-color: #f3f1f19c;
-    height: 200vh;
+    height: 350vh;
     left: 300px;
     top: 70px;
     border-radius: 5px;
@@ -134,7 +142,7 @@ h3 {
     border: 5px solid, white solid;
     margin: 0;
     background-color: #edeaeaae;
-    height: 150vh;
+    height: 200vh;
     left: 50px;
     top: 70px;
     border-radius: 5px;

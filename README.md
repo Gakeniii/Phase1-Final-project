@@ -9,6 +9,6 @@ I'm solving the problem of gift-giving and product buying, in that when you see 
 
 PROJECT SET-UP INSTRUCTIONS: make sure that that json server is running by running the following code in the                          the terminal: json-server --watch db.json. Next run the index.html file
 
-LINK TO LIVE SITE ON GITHUB : (https://gakeniii.github.io/Phase1-Final-project/)
+LINK TO LIVE SITE ON GITHUB : https://gakeniii.github.io/Phase1-Final-project/
 
 

@@ -44,10 +44,11 @@ function renderGift(giftObject) {
     const linkGift = document.querySelector("#linkGift");
     const commentGift = document.querySelector("#commentGift");
     
-    //Removing the  link scrolling to the from
-    //didn't work
+    //Removing the link scrolling to the from
+    //didn't work was stalling the whole page
     // document.getElementById('wish').remove()
 
+    //ADDING THE DELETE BUTTON
     // Clear previous delete button
     delGift.innerHTML = "";
 
