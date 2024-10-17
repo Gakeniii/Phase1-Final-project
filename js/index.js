@@ -108,7 +108,7 @@ function submitData() {
     })
       .then((res) => res.json())
       .then((giftObj) => {
-        alert('Item added successfully! ;)')
+        alert('Item added successfully ;)')
         console.log(giftObj)
       })
       .catch((error) => console.error(error));
