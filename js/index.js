@@ -107,7 +107,10 @@ function submitData() {
       body: JSON.stringify(newGift),
     })
       .then((res) => res.json())
-      .then((giftObj) => console.log(giftObj))
+      .then((giftObj) => {
+        alert('Item added successfully! ;)')
+        console.log(giftObj)
+      })
       .catch((error) => console.error(error));
 
     event.target.reset(); // Clear form inputs
