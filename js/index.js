@@ -1,7 +1,7 @@
 
-// const baseURL = "https://my-json-server.typicode.com/Gakeniii/Phase1-Final-project/gifts";
+const baseURL = "https://my-json-server.typicode.com/Gakeniii/Phase1-Final-project/gifts";
 
-const baseURL = "http://localhost:3000/gifts"
+// const baseURL = "http://localhost:3000/gifts"
 document.addEventListener("DOMContentLoaded", function () {
   fetch(baseURL)
     .then((resp) => {

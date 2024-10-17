@@ -36,11 +36,11 @@ header {
     justify-content: space-between;
     justify-content: center;
     width: 500px;
-    /* background-color: #ffffffb0; */
     padding: 5px;
     border-radius: 3px;
-    color: rgb(88, 7, 121);
-    left: 450px;
+    font-size: 40px;
+    color: #000;
+    text-shadow: 0px 0px 4px 4px rgb(150, 149, 149);;
     /* box-shadow: 0px 0px 0px rgb(222, 132, 22); */
 }
 
@@ -154,7 +154,7 @@ h3 {
     height: 500px;
     width: 600px;
     left: 350px;
-    bottom: 400px;
+    bottom: 320px;
     font-family: "Poppins", sans-serif;
     justify-content: center;
 }
