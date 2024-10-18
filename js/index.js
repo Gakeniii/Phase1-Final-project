@@ -1,7 +1,9 @@
 
 const baseURL = "https://my-json-server.typicode.com/Gakeniii/Phase1-Final-project/gifts";
 
-// const baseURL = "http://localhost:3000/gifts"
+//tried to deploy the db.json file to github
+// const baseURL = "https://gakeniii.github.io/API/db.json";
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch(baseURL)
     .then((resp) => {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((err) => {
       alert("An error occurred: " + err);
     });
+    // Initializing the server
     submitData();
 });
 
@@ -72,6 +75,7 @@ function renderGift(giftObject) {
   });
 }
 
+//Adding a gift to the form
 function submitData() {
   // Grab the form
   const addAnotherGift = document.getElementById("submitForm");
@@ -118,6 +122,51 @@ function submitData() {
   });
 }
 
+//Editing a gift didn't work
+// function updateData(id) {
+//     //grab the form
+//     const addAnotherGift = document.getElementById("submitForm")
+//     // get the event listener too
+//     const editGift = document.createElement('Edit')
+//     addAnotherGift.addEventListener('submit', (event) => {
+//         event.preventDefault();
+
+//         const newName = event.target["nameInput"].value
+//         const newItem = event.target["itemInput"].value
+//         const newPrice = event.target["priceInput"].value
+//         const newPicture = event.target["pictureInput"].value
+//         const newLink = event.target["linkInput"].value
+//         const newComment = event.target["commentInput"].value
+
+//         const updateGift = {
+//             item: newItem,
+//             name: newName,
+//             price: newPrice,
+//             picture: newPicture,
+//             link: newLink,
+//             comment: newComment
+//         }
+
+//         const edit = document.getElementById('edit');
+//         edit.appendChild(editGift)
+//         renderGift(updateGift);
+
+//         fetch(`${baseURL}/${id}`, {
+//             method: "PATCH",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Accept": "application/json"
+//             },
+//             body: JSON.stringify(updateGift),
+//         })
+//             .then((res) => res.json())
+//             .then((giftObj) => console.log(giftObj))
+//             .catch(error => console.error(error))
+//         event.target.reset()
+//     })
+// }
+
+//Deleting a gift
 function deleteGift(id) {
   fetch(`${baseURL}/${id}`, {
     method: "DELETE",
@@ -132,4 +181,3 @@ function deleteGift(id) {
     .catch((error) => console.log("Error: Cannot delete:", error));
 }
 
-// Initialize form submission handling
