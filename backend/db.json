@@ -1,0 +1,76 @@
+{
+  "gifts": [
+    {
+      "item": "Wireless Keyboard",
+      "name": "You",
+      "price": "ksh 2,799",
+      "picture": "https://files.miniso.co.ke/main/2024/05/1_7431.webp",
+      "link": "https://miniso.co.ke/product/6942269517766/",
+      "comment": "Happy coding :)",
+      "id": "1"
+    },
+    {
+      "item": "Hot Chicks Louboutins",
+      "name": "Martha",
+      "price": "$ 845.00",
+      "picture": "https://us.christianlouboutin.com/media/catalog/product/cache/c8e9b72c512eaa31cd76a11d9f425a9e/1/1/1190911bk01-1190911bk01-main_image-ecommerce-christianlouboutin-hotchick-1190911_bk01_1_1200x1200.jpg",
+      "link": "https://us.christianlouboutin.com/us_en/hot-chick-black-1190911bk01.html",
+      "comment": "Boss shoes for a Boss babe !!!",
+      "id": "2"
+    },
+    {
+      "item": "Vintage Dior Sunglasses",
+      "name": "Mulemi",
+      "price": "$65.00",
+      "picture": "https://i.ebayimg.com/images/g/VroAAOSwtCJkgbvs/s-l1600.webp",
+      "link": "https://www.ebay.com/itm/166157756592",
+      "comment": "leopard print",
+      "id": "3"
+    },
+    {
+      "item": "Turkish Carpets",
+      "name": "Shosh",
+      "price": "ksh 12,000",
+      "picture": "https://www.kristalcarpets.co.ke/cdn/shop/files/artist-palette-carpet.jpg?v=1716798047&width=713",
+      "link": "https://www.kristalcarpets.co.ke/products/artist-palette-carpet",
+      "comment": "Cucu's anniversary gift",
+      "id": "4"
+    },
+    {
+      "item": "Pink faux Leather Bible",
+      "name": "Nakweri",
+      "price": "ksh 6,500",
+      "picture": "https://womanandtheword.com/wp-content/uploads/2024/04/image00005-4.jpeg",
+      "link": "https://womanandtheword.com/product/kjv-pink-faux-leather-hardcover-my-promise-bible/",
+      "comment": "Make sure it's pink !!!",
+      "id": "5"
+    },
+    {
+      "item": "Cast Iron Cookware set",
+      "name": "Auntie Maria",
+      "price": "Ksh 31,995",
+      "picture": "https://shopusa.co.ke/cdn/shop/products/5-piece-enamel-cast-iron-set-shopusa-kenya-1_500x500.jpg?v=1709592453",
+      "link": "https://shopusa.co.ke/products/3-piece-enamel-cast-iron-set?currency=KES&variant=45195304698107&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=a515bfa06b56&gad_source=1&gclid=EAIaIQobChMI06TQ3rOOiQMVEYODBx0cfw83EAQYBCABEgJpgfD_BwE",
+      "comment": "Red or blue don't mind any",
+      "id": "6"
+    },
+    {
+      "item": "Teddy Bear",
+      "name": "Sankara",
+      "price": "ksh 2,000",
+      "picture": "https://files.miniso.co.ke/main/2024/07/main_20240408065502_9613_5353.webp",
+      "link": "https://miniso.co.ke/product/6941447574041/?gad_source=1&gclid=EAIaIQobChMItc2b8IWQiQMVrKmDBx1LbCMnEAQYBSABEgJMl_D_BwE",
+      "comment": "A plushie to help him sleep",
+      "id": "7"
+    },
+    {
+      "id": "4a99",
+      "item": "Snoopy Cup",
+      "name": "Audrey",
+      "price": "ksh 1,019",
+      "picture": "https://files.miniso.co.ke/main/2024/07/display_1_4829_1551.webp",
+      "link": "https://files.miniso.co.ke/main/2024/07/display_1_4829_1551.webp",
+      "comment": "Audrey's Birthday gift"
+    }
+  ]
+}
